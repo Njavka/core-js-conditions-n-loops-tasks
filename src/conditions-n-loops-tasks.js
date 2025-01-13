@@ -422,6 +422,20 @@ function getSpiralMatrix(size) {
  */
 function rotateMatrix(/* matrix */) {
   throw new Error('Not implemented');
+  /* const n = matrix.length;
+  const rotatedMatrix = new Array(n);
+
+  for (let i = 0; i < n; i += 1) {
+    rotatedMatrix[i] = new Array(n);
+  }
+
+  for (let i = 0; i < n; i += 1) {
+    for (let j = 0; j < n; j += 1) {
+      rotatedMatrix[j][n - 1 - i] = matrix[i][j];
+    }
+  }
+
+  return rotatedMatrix; */
 }
 
 /**
@@ -440,6 +454,41 @@ function rotateMatrix(/* matrix */) {
  */
 function sortByAsc(/* arr */) {
   throw new Error('Not implemented');
+  /* if (arr.length <= 1) {
+    return arr;
+  }
+
+  function merge(left, right) {
+    const result = [];
+    let i = 0;
+    let j = 0;
+
+    while (i < left.length && j < right.length) {
+      if (left[i] < right[j]) {
+        result.push(left[i]);
+        i += 1;
+      } else {
+        result.push(right[j]);
+        j += 1;
+      }
+    }
+
+    return result.concat(left.slice(i)).concat(right.slice(j));
+  }
+
+  function mergeSort(array) {
+    if (array.length <= 1) {
+      return array;
+    }
+
+    const mid = Math.floor(array.length / 2);
+    const left = mergeSort(array.slice(0, mid));
+    const right = mergeSort(array.slice(mid));
+
+    return merge(left, right);
+  }
+
+  return mergeSort(arr); */
 }
 
 /**
