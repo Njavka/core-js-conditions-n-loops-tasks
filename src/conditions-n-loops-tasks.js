@@ -167,8 +167,9 @@ function convertToRomanNumerals(num) {
  *  '10,5'    => 'one zero point five'
  *  '1950.2'  => 'one nine five zero point two'
  */
-function convertNumberToString(numberStr) {
-  let result = '';
+function convertNumberToString(/* numberStr */) {
+  throw new Error('Not implemented');
+  /* let result = '';
 
   for (let i = 0; i < numberStr.length; i += 1) {
     const currentChar = numberStr[i];
@@ -216,7 +217,7 @@ function convertNumberToString(numberStr) {
     }
   }
 
-  return result.trim();
+  return result.trim(); */
 }
 
 /**
@@ -231,8 +232,16 @@ function convertNumberToString(numberStr) {
  *  '0123210'   => true
  *  'qweqwe'    => false
  */
-function isPalindrome(/* str */) {
-  throw new Error('Not implemented');
+function isPalindrome(str) {
+  const { length } = str;
+
+  for (let i = 0; i < Math.floor(length / 2); i += 1) {
+    if (str[i] !== str[length - 1 - i]) {
+      return false;
+    }
+  }
+
+  return true;
 }
 
 /**
@@ -249,8 +258,22 @@ function isPalindrome(/* str */) {
  *  'qwerty', 'Q'     => -1
  *  'qwerty', 'p'     => -1
  */
-function getIndexOf(/* str, letter */) {
-  throw new Error('Not implemented');
+function getIndexOf(str, letter) {
+  let index = 0;
+
+  for (;;) {
+    try {
+      if (str[index] === letter) {
+        return index;
+      }
+      if (str[index] === undefined) {
+        return -1;
+      }
+      index += 1;
+    } catch (e) {
+      return -1;
+    }
+  }
 }
 
 /**
